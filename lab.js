@@ -6,6 +6,10 @@
 
 //Code here
 
+const me = {
+  name: 'Dan',
+  age: 43
+}
 
 
 //////////////////////////// PROBLEM 2 ////////////////////////////
@@ -17,21 +21,27 @@
 
 //Code here
 
-
+const dog = {
+  name: 'Ryu',
+  color: 'Gray and White',
+  age: 3,
+  goodBoy: true,
+  goodGirl: false
+}
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
 //Code here
 
-
+console.log(dog.name)
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
 //Code here
 
-
+console.log(dog['color'])
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
 /*
@@ -41,6 +51,14 @@
 
 //Code here
 
+const favoriteThings = {
+  band: 'Tool',
+  food: 'Pasta',
+  person: 'Wife',
+  book: 'Art of the Impossible',
+  movie: 'Shawshank Redemption',
+  holiday: 'Football'
+}
 
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
@@ -48,6 +66,11 @@
 
 //Code here
 
+let { car , show } = favoriteThings;
+favoriteThings.car = 'Audi SQ5'
+favoriteThings.show = 'True Detective'
+
+console.log(favoriteThings)
 
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
@@ -56,6 +79,11 @@
 
 //Code here
 
+favoriteThings.food = 'Burrito'
+console.log(favoriteThings)
+
+favoriteThings.book = 'Hagakuri'
+console.log(favoriteThings)
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
 
@@ -74,7 +102,11 @@ var carDetails = {
 
 //Code Here
 
-
+let { color } = carDetails
+let { make }  = carDetails
+let { model } = carDetails
+let { year } = carDetails
+console.log(color) 
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
 
@@ -84,15 +116,21 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
+function greeting(obj) {
   //Code Here
-  
+
+  let { firstName, lastName, title } = obj
+
+  firstName = 'Dan'
+  lastName = 'Paymar'
+  title = 'Mr.'
+
+
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
-
-
+console.log(greeting({firstName: 'Dan', lastName: 'Paymar', title: 'Mr.'}))
 
 //////////////////////////// PROBLEM 8 ////////////////////////////
 
@@ -106,7 +144,12 @@ function greeting( obj ) {
 
 //Code Here
 
+function totalPopulation(object) {
+  let { utah, california, texas, arizona } = object
+  return utah + california + texas + arizona
 
+}
+console.log(totalPopulation({utah: 1, california: 4, texas: 8, arizona: 3}))
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
@@ -197,7 +240,7 @@ var user = {
 
 //Code Here
 
-  
+
 /*
     Next make three new phone instances using your class.
     Send in values of your choice. They should match these data types:
@@ -215,7 +258,7 @@ var user = {
   don't forget to pass in a new price 
 
   Then console.log that object to see the price change
-*/ 
+*/
 
 //Code Here 
 
@@ -282,7 +325,7 @@ const shippingInfo = {
 //////////////////////////// PROBLEM 16 ////////////////////////////
 
 /*
-  Create a class called Vehicle. Make sure to call your constructor, 
+  Create a class called Vehicle. Make sure to call your constructor,
   and require these 3 parameters: capacity (how many passengers), color, and mileage.
 
   Write a method inside your class called 'move'.
@@ -301,11 +344,11 @@ const shippingInfo = {
 //Code Here
 
 
-/* 
-  Now we'll create a class that's based off of the vehicle class. 
+/*
+  Now we'll create a class that's based off of the vehicle class.
 
-  Write a class called Motorcycle that *extends* the Vehicle class. In the constructor, 
-  make sure you require all of the parameters from the Vehicle class as well as 2 
+  Write a class called Motorcycle that *extends* the Vehicle class. In the constructor,
+  make sure you require all of the parameters from the Vehicle class as well as 2
   new ones: make and isCool. (Hint: don't forget to call the super function)
 */
 
@@ -322,18 +365,18 @@ const shippingInfo = {
 */
 
 /*
-  Let's make another class based off of Vehicle. 
+  Let's make another class based off of Vehicle.
 
   Write a class called Boat that *extends* the Vehicle class. The constructor should take in
-  all the same arguments as Vehicle plus 3 new ones: 
+  all the same arguments as Vehicle plus 3 new ones:
   name (boats gotta have cool names), type (ski boat, yacht, etc), and isSeaworthy.
 
-  Create a method inside of the Boat class called checkSeaworthiness 
+  Create a method inside of the Boat class called checkSeaworthiness
   Inside the method, check to see if the boat is seaworthy
   If it is, console.log a string: 'The {color} {type} {name} is seaworthy!'
   If it isn't, console.log a string: 'You need to get your {type} in shape!'
 
-  Write a second function in this class called performMaintenance 
+  Write a second function in this class called performMaintenance
   This function should set isSeaworthy to be true
 */
 
@@ -341,7 +384,7 @@ const shippingInfo = {
 
 
 /*
-  Create a new boat using your class. You can choose whatever values you like for all the 
+  Create a new boat using your class. You can choose whatever values you like for all the
   properties except isSeaworthy -- make that one false. Call your variable myFirstBoat.
 */
 
