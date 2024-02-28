@@ -66,7 +66,7 @@ const favoriteThings = {
 
 //Code here
 
-let { car , show } = favoriteThings;
+let { car, show } = favoriteThings;
 favoriteThings.car = 'Audi SQ5'
 favoriteThings.show = 'True Detective'
 
@@ -88,7 +88,7 @@ console.log(favoriteThings)
 //////////////////////////// PROBLEM 6 ////////////////////////////
 
 // Do not edit the code below.
-var carDetails = {
+let carDetails = {
   color: 'red',
   make: 'toyota',
   model: 'tacoma',
@@ -103,10 +103,10 @@ var carDetails = {
 //Code Here
 
 let { color } = carDetails
-let { make }  = carDetails
+let { make } = carDetails
 let { model } = carDetails
 let { year } = carDetails
-console.log(color) 
+console.log(color)
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
 
@@ -130,7 +130,7 @@ function greeting(obj) {
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
-console.log(greeting({firstName: 'Dan', lastName: 'Paymar', title: 'Mr.'}))
+console.log(greeting({ firstName: 'Dan', lastName: 'Paymar', title: 'Mr.' }))
 
 //////////////////////////// PROBLEM 8 ////////////////////////////
 
@@ -149,7 +149,7 @@ function totalPopulation(object) {
   return utah + california + texas + arizona
 
 }
-console.log(totalPopulation({utah: 1, california: 4, texas: 8, arizona: 3}))
+console.log(totalPopulation({ utah: 1, california: 4, texas: 8, arizona: 3 }))
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
@@ -163,18 +163,42 @@ console.log(totalPopulation({utah: 1, california: 4, texas: 8, arizona: 3}))
 
 //Code Here
 
+function ingredients(obj) {
+  // Destructure object properties and store them in variables
+  const { carb, fat, protein } = obj;
+
+  // Create an empty array
+  const ingredientsList = [];
+
+  // Push destructured values to the array
+  ingredientsList.push(carb, fat, protein);
+
+  // Return the array containing the ingredients
+  return ingredientsList;
+}
+
+// Example usage
+const food = {
+  carb: "bread",
+  fat: "cheese",
+  protein: "chicken",
+};
+
+const ingredientsArray = ingredients(food);
+
+console.log(ingredientsArray);
 
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
 // Do not edit the code below.
-var user = {
+let user = {
   name: 'Bryan',
   age: 24,
   pwHash: 'U+Ldlngx2BYQk',
   email: 'BryanSmith33@gmail.com',
   birthday: '05/02/1990',
   username: 'bryansmith33'
-};
+}
 // Do not edit the code above.
 
 /*
@@ -185,6 +209,10 @@ var user = {
 
 //Code Here
 
+user.name = 'Bryan G. Smith'
+user.email = 'bryan.smith@devmountain.in'
+console.log(user.name)
+console.log(user.email)
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
@@ -193,6 +221,7 @@ var user = {
 
 //Code Here
 
+delete user.age
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
@@ -203,7 +232,18 @@ var user = {
 
 //Code here
 
+class Cat {
+  constructor(name, age, color) {
 
+  }
+}
+
+const myCat = {
+  name: "meow",
+  age: 25,
+  color: "gren"
+}
+console.log(myCat.name)
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
 /*
@@ -214,6 +254,21 @@ var user = {
 */
 
 //Code here
+
+class Wizard {
+  constructor(name, age, favoriteSpell) {
+    this.name = name
+    this.age = age
+    this.favoriteSpell = favoriteSpell
+  }
+
+  castSpell() {
+    console.log(`${this.name} has cast ${this.favoriteSpell}`)
+  }
+}
+
+let glen = new Wizard("Glen", 52, "Sparkle Speew")
+glen.castSpell()
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
@@ -240,6 +295,27 @@ var user = {
 
 //Code Here
 
+class Phone {
+  constructor(brand, model, storage, color) {
+    this.brand = brand
+    this.model = model
+    this.storage = storage
+    this.color = color
+    this.price = price
+    this.sold = false // default to false always
+
+  }
+
+  sell() {
+    this.sold = true; // Access and modify the object's property
+    console.log(`${this.brand} ${this.model} has been sold.`);
+  }
+
+  changePrice(newPrice) {
+    this.price = newPrice; // Access and update object's price
+  }
+
+}
 
 /*
     Next make three new phone instances using your class.
@@ -253,6 +329,30 @@ var user = {
 
 //Code Here
 
+const phoneOne = {
+  brand: 'Apple',
+  model: 'iPhone 15',
+  storage: 256,
+  color: 'black',
+  price: 999
+}
+
+const phoneTwo = {
+  brand: 'Samsung',
+  model: 'Galaxy',
+  storage: 500,
+  color: 'white',
+  price: 998
+}
+
+const phoneThree = {
+  brand: 'Google',
+  model: 'Pixel',
+  storage: 750,
+  color: 'silver',
+  price: 99
+}
+
 /* 
   Call the changePrice function on one of your phones, 
   don't forget to pass in a new price 
@@ -261,7 +361,6 @@ var user = {
 */
 
 //Code Here 
-
 
 /*
   Now call the sell method on one of your other phone objects
